@@ -3,7 +3,7 @@ require 'net/http'
 class ImageSearch
 
 def getRequest
-  key = ENV["PIXABAY_API_KEY"]
+  key = ENV["pixabay_api_key"]
   color = "yellow"
   randNoun = "flower"
 
