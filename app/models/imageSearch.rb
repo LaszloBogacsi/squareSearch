@@ -2,17 +2,13 @@ require 'net/http'
 
 class ImageSearch
 
-def getRequest
+def getRequest(user_color, randomNoun)
   key = ENV["pixabay_api_key"]
-  color = "yellow"
-  randNoun = "flower"
-
-  url = URI.parse("http://pixabay.com/api/?key=#{key}&q=#{color}+#{randNoun}&image_type=photo")
+  url = URI.parse("http://pixabay.com/api/?key=#{key}&q=#{user_color}+#{randNoun}&image_type=photo")
   req = Net::HTTP::Get.new(url.to_s)
-  res = Net::HTTP.start(url.host, url.port) {|http|
+  res = Net::HTTP.start(url.host, url.port) do |http|
     http.request(req)
-  }
-  # res.body
+  end
   JSON.parse res.body
 end
 
