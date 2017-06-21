@@ -17,10 +17,10 @@ end
     expect(imageSearch.get_time).to eq 0
   end
 
-  it "#getTime returns the time needed to return the response" do
+  it "#get_time returns the time needed to return the response" do
     imageSearch = ImageSearch.new
     imageSearch.getRequest("yellow", "cat")
-    expect(imageSearch.get_time).not_to eq 0
+    expect(imageSearch.get_time).not_to be 0
   end
 
 end
