@@ -21,6 +21,7 @@ This application allows the user to search google images based on a user selecti
 - the app runs on `rails 5`
 - the app doesn't use database because it was outside of the tasks scope, although the was initialized with `postgres` database to be able to run on `Heroku`
 - to run tests: run `rspec --format documentation ` from the root folder
+- the app uses the **Pixabay API** to perform the image search(opposed to the original task where the deprecated google image API was recommended, but issues were reported)
 - to use it locally:
 ```
 clone repo
