@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "squares" %>
-
+<%= render 'layouts/navbar' %>
 <h2>Hello world!</h2>
 <div id="squares">
 <% @colors.each do |color| %>
@@ -11,9 +11,8 @@
 
 <% if !@search_list.empty?%>
 <div>
-
 <h3>Recent Searches </h3>
-<table>
+<table class="table table-hover">
   <tr>
     <th> Date </th>
     <th> Time </th>
