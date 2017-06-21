@@ -1,10 +1,13 @@
+<%= render 'layouts/navbar' %>
 <%= @color %>
 <%= @randomWord %>
 <%=link_to "Back", root_path %>
-<div>
-<% @images[0..4].each do |image| %>
-<a href="<%= image["pageURL"]%>">
-<img src="<%= image["webformatURL"] %>">
-</a>
-<% end %>
+<div class="row">
+  <div class="col-xs-6 col-md-12">
+    <% @images[0..4].each do |image| %>
+    <a href="<%= image["pageURL"]%>" class="thumbnail">
+      <img src="<%= image["previewURL"] %>" >
+    </a>
+    <% end %>
+  </div>
 </div>

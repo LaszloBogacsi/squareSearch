@@ -4,5 +4,11 @@
   float: left;
   width: 150px;
   height: 150px;
-  margin-right: 5px;
+  margin: 5px;
+  border-top: 1px solid #eee;
 }
+
+#squares div:hover {
+    background: #e1e1e1;
+    border: 2px solid black;
+  }

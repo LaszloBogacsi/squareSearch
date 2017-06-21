@@ -1,37 +1,45 @@
 <%= stylesheet_link_tag "squares" %>
 <%= render 'layouts/navbar' %>
-<h2>Hello world!</h2>
-<div id="squares">
-<% @colors.each do |color| %>
-<%= link_to search_path(color) do %>
-<div style="background-color:<%= color %>"></div>
-<% end %>
-<% end %>
+<h4>Click on a square to search images</h4>
+
+<div class="row">
+  <div class="col-xs-6 col-md-8">
+
+    <div id="squares">
+      <% @colors.each do |color| %>
+      <%= link_to search_path(color) do %>
+      <div style="background-color:<%= color %>"></div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <% if !@search_list.empty?%>
-<div>
 <h3>Recent Searches </h3>
-<table class="table table-hover">
-  <tr>
-    <th> Date </th>
-    <th> Time </th>
-    <th> Color </th>
-    <th> Noun </th>
-    <th> Search Time [ms] </th>
-    <th> Search Again? </th>
-  </tr>
-<% @search_list.each do |item| %>
-<tr>
-  <td><%= item[:date] %></td>
-  <td><%= item[:time] %></td>
-  <td><%= item[:color] %></td>
-  <td><%= item[:noun] %></td>
-  <td><%= (item[:search_time]*1000).round %></td>
-  <td><%= link_to "Again", search_path(item[:color],item[:noun])%></td>
+<div class="row">
+  <div class="col-xs-6 col-md-8">
+    <table class="table table-hover">
+      <tr>
+        <th> Date </th>
+        <th> Time </th>
+        <th> Color </th>
+        <th> Noun </th>
+        <th> Search Time [ms] </th>
+        <th> Search Again? </th>
+      </tr>
+      <% @search_list.each do |item| %>
+      <tr>
+        <td><%= item[:date] %></td>
+        <td><%= item[:time] %></td>
+        <td><%= item[:color] %></td>
+        <td><%= item[:noun] %></td>
+        <td><%= (item[:search_time]*1000).round %></td>
+        <td><%= link_to "Again", search_path(item[:color],item[:noun])%></td>
 
-</tr>
-<% end%>
-</table>
-<% end %>
+      </tr>
+      <% end%>
+    </table>
+  </div>
+  <% end %>
 </div>
