@@ -1,13 +1,26 @@
 <%= render 'layouts/navbar' %>
-<%= @color %>
-<%= @randomWord %>
-<%=link_to "Back", root_path %>
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Search</h4>
+    <h6 class="card-subtitle mb-2 text-muted">you searched for: </h6>
+    <p class="card-text"><%= @color %>, <%= @randomWord %> </p>
+  </div>
+</div>
 <div class="row">
   <div class="col-xs-6 col-md-12">
     <% @images[0..4].each do |image| %>
     <a href="<%= image["pageURL"]%>" class="thumbnail">
-      <img src="<%= image["previewURL"] %>" >
+      <img class="card-img-top" src="<%= image["previewURL"] %>" >
     </a>
     <% end %>
   </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%=link_to "Back", root_path %>
+  </div>
+</div>
+<div>
+  <p>Powered by:</p>
+  <%= image_tag "pixabaylogo.png" %>
 </div>

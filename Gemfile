@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'figaro'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'rails-assets-tether', '>= 1.1.0'
 
