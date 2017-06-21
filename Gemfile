@@ -9,6 +9,7 @@ gem 'figaro'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'rails-assets-tether', '>= 1.1.0'
+gem 'webmock'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
